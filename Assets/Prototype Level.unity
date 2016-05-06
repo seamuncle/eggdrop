@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trail: {fileID: 1632291063}
-  secondsDuration: 5
+  secondsDuration: 8
   secondsIntoTraversal: 0
   isActive: 1
 --- !u!1 &852639685
@@ -137,6 +137,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 852639686}
+  - 114: {fileID: 852639690}
   - 33: {fileID: 852639689}
   - 135: {fileID: 852639688}
   - 23: {fileID: 852639687}
@@ -169,7 +170,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6e1d36c4bbd37d54f9ea183e4f5fd656, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -204,6 +205,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 852639685}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &852639690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 852639685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdbc8596f5e2fef47b67618d23600ed1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  percentVelocityRelease: 1.3
+  eggPrefab: {fileID: 178834, guid: 5cf4b51b67cb9e841ab0d7b293d783bb, type: 2}
+  lastPosition: {x: 0, y: 0, z: 0}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!1 &1105551352
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +303,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1205885475}
   m_LocalRotation: {x: -0.025614992, y: -0.54536355, z: 0.7593607, w: -0.35396874}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -3.06, y: 9.37, z: -4.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -460,7 +476,7 @@ GameObject:
   - 33: {fileID: 1785700060}
   - 65: {fileID: 1785700059}
   - 23: {fileID: 1785700058}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
