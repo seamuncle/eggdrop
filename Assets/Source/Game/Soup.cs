@@ -21,7 +21,8 @@ public class Soup : MonoBehaviour
 	void OnCollisionEnter (Collision collision)
 	{
 		Destroy (gameObject);
-		winDelegate.StartWin ();
+
+		SendMessageUpwards ("OnLevelComplete");
 	}
 
 }
