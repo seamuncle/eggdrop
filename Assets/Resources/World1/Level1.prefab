@@ -351,6 +351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa5029a18913740ec8f50244693e5246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  birdTrail: {fileID: 11464808}
+  birdTrailDuration: 8
 --- !u!136 &13636872
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -11,15 +11,14 @@ public class World : MonoBehaviour
 
 	public string resourceFolder;
 
-	public TrailTraversal bird;
+	public TrailTraversal birdTrailTraversal;
+
+	public Trail levelTransitionTrail;
 
 	/**
 	 * This should be one less than the level name
 	 */
 	public int levelIndex = 1;
-
-	public float levelTransitionTime = 0.8f;
-
 
 	public float levelTransitionDistance = 30f;
 
@@ -33,16 +32,13 @@ public class World : MonoBehaviour
 
 		}
 
-		if (bird == null) {
-			bird = GetComponentInChildren<TrailTraversal> ();
+		if (birdTrailTraversal == null) {
+			birdTrailTraversal = GetComponentInChildren<TrailTraversal> ();
+			// TODO check name
 		}
 		LoadNextLevel ();
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-	
+
+		birdTrailTraversal.trail = currLevel.birdTrail;
 	}
 
 	void LoadNextLevel ()
@@ -69,21 +65,31 @@ public class World : MonoBehaviour
 		nextLevel.transform.localPosition = Vector3.right * levelTransitionDistance;
 	}
 
+	void TransitionBird ()
+	{
+		iTween.Stop (birdTrailTraversal.gameObject);
+
+		levelTransitionTrail.points [0].transform.position = birdTrailTraversal.GetPrevTrailPosition ();
+		levelTransitionTrail.points [1].transform.position = birdTrailTraversal.GetCurrTrailPosition ();
+		levelTransitionTrail.points [2].transform.position = (Vector3.left * levelTransitionDistance + currLevel.birdTrail.GetClampedPointFor (currLevel.birdTrail.points.Count - 1));
+		levelTransitionTrail.points [3].transform.position = (Vector3.left * levelTransitionDistance + currLevel.birdTrail.GetClampedPointFor (0));
+
+		birdTrailTraversal.trail = levelTransitionTrail;
+		birdTrailTraversal.Start ();
+	}
+
+
 	void OnLevelComplete ()
 	{
 		LoadNextLevel ();
 
-		// TODO create path for bird given current curve points and starting curve points on next level
-
-		// TODO tween bird
-
-		// tween nextLevel
+		TransitionBird ();
 
 		var hash = iTween.Hash (
 			           "oncomplete", "OnLevelMoveComplete",
 			           "oncompletetarget", gameObject,
 			           "oncompleteparams", prevLevel,
-			           "time", levelTransitionTime,
+			           "time", levelTransitionTrail.secondsDuration, // Use time from allocated transition trail's duration
 			           "position", Vector3.left * levelTransitionDistance
 
 		           );
@@ -95,5 +101,10 @@ public class World : MonoBehaviour
 	{
 		currLevel.transform.parent = null;
 		Destroy (prevLevel);
+
+		// This should happen when bird is done traversal, but for now, abuse the fact level tween is the same duration
+		iTween.Stop (birdTrailTraversal.gameObject);
+		birdTrailTraversal.trail = currLevel.birdTrail;
+		birdTrailTraversal.Start ();
 	}
 }
