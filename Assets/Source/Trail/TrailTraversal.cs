@@ -4,35 +4,43 @@ using System.Collections;
 public class TrailTraversal : MonoBehaviour
 {
 	// Trail this traveral is following
-	public Trail trail;
+    [SerializeField]
+	private Trail trail;
 
 	// A value between 0 and the duration of the traversal, in seconds.
 	public float secondsIntoTraversal = 0f;
 
-	public bool isActive = true;
+    [SerializeField]
+    private TrailPoint[] points;
 
-	private Transform[] points;
-
-	private float secondsPerPoint;
+    [SerializeField]
+    private float secondsPerPoint;
 
 	// Use this for initialization
-	public void Start ()
+    void Start()
+    {
+        Begin(trail);
+    }
+
+	public void Begin ( Trail trail )
 	{
 		if (trail == null || trail.secondsDuration <= 0f) {
 			Debug.LogError ("Trail/Traversal misconfigured", gameObject);
 		}
+        this.trail = trail;
 		iTween.Init (gameObject); 
 		BuildPoints ();
-		secondsIntoTraversal = 0f;
+		secondsIntoTraversal = trail.secondsStartingOFfset;
+        enabled = true;
 
-	}
+    }
 
-	private void BuildPoints ()
+    private void BuildPoints ()
 	{
 		bool isLooping = trail.loopType == iTween.LoopType.loop;
 		int pointsLength = trail.points.Count + (isLooping ? 1 : 0);
 
-		points = new Transform[pointsLength];
+		points = new TrailPoint[pointsLength];
 		trail.points.CopyTo (points);
 
 		if (isLooping) {
@@ -43,9 +51,6 @@ public class TrailTraversal : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		if (!isActive) {
-			return;
-		}
 		secondsIntoTraversal += Time.fixedDeltaTime;
 		startingPointIndex = Mathf.FloorToInt ((points.Length - 1) * GetPercentCompletion ());
 
@@ -53,8 +58,9 @@ public class TrailTraversal : MonoBehaviour
 			if (trail.loopType == iTween.LoopType.loop) {
 				secondsIntoTraversal -= trail.secondsDuration;
 			} else {
+                Debug.LogWarning("secondsIntoTraversal:" + secondsIntoTraversal + " trail.secondsDuration:" + trail.secondsDuration);
 				secondsIntoTraversal = trail.secondsDuration;
-				isActive = false;
+				enabled = false;
 			}
 		} 
 		transform.position = GetCurrTrailPosition ();

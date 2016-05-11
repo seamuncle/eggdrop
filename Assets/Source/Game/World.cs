@@ -38,7 +38,7 @@ public class World : MonoBehaviour
 		}
 		LoadNextLevel ();
 
-		birdTrailTraversal.trail = currLevel.birdTrail;
+		birdTrailTraversal.Begin( currLevel.birdTrail );
 	}
 
 	void LoadNextLevel ()
@@ -74,8 +74,7 @@ public class World : MonoBehaviour
 		levelTransitionTrail.points [2].transform.position = (Vector3.left * levelTransitionDistance + currLevel.birdTrail.GetClampedPointFor (currLevel.birdTrail.points.Count - 1));
 		levelTransitionTrail.points [3].transform.position = (Vector3.left * levelTransitionDistance + currLevel.birdTrail.GetClampedPointFor (0));
 
-		birdTrailTraversal.trail = levelTransitionTrail;
-		birdTrailTraversal.Start ();
+		birdTrailTraversal.Begin ( levelTransitionTrail );
 	}
 
 
@@ -104,7 +103,6 @@ public class World : MonoBehaviour
 
 		// This should happen when bird is done traversal, but for now, abuse the fact level tween is the same duration
 		iTween.Stop (birdTrailTraversal.gameObject);
-		birdTrailTraversal.trail = currLevel.birdTrail;
-		birdTrailTraversal.Start ();
+		birdTrailTraversal.Begin ( currLevel.birdTrail );
 	}
 }

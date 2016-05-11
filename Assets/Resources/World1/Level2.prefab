@@ -8,6 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 439572}
+  - 114: {fileID: 11482736}
   m_Layer: 0
   m_Name: Point2
   m_TagString: Untagged
@@ -23,6 +24,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 440140}
+  - 114: {fileID: 11480794}
   m_Layer: 0
   m_Name: Point5
   m_TagString: Untagged
@@ -38,6 +40,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 499678}
+  - 114: {fileID: 11428400}
   m_Layer: 0
   m_Name: Point2
   m_TagString: Untagged
@@ -69,6 +72,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 429102}
+  - 114: {fileID: 11450296}
   m_Layer: 0
   m_Name: Point3
   m_TagString: Untagged
@@ -84,6 +88,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 490636}
+  - 114: {fileID: 11402796}
   m_Layer: 0
   m_Name: Point4
   m_TagString: Untagged
@@ -99,6 +104,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 495050}
+  - 114: {fileID: 11484374}
   m_Layer: 0
   m_Name: Point3
   m_TagString: Untagged
@@ -130,6 +136,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 403480}
+  - 114: {fileID: 11434784}
   m_Layer: 0
   m_Name: Point1
   m_TagString: Untagged
@@ -163,6 +170,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 497970}
+  - 114: {fileID: 11493838}
   m_Layer: 0
   m_Name: Point4
   m_TagString: Untagged
@@ -178,6 +186,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 405966}
+  - 114: {fileID: 11437716}
   m_Layer: 0
   m_Name: Point1
   m_TagString: Untagged
@@ -480,6 +489,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11402796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87700dfcf3ebaa459ea39c77a2a4509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11420520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -492,6 +512,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   birdTrail: {fileID: 11498332}
+--- !u!114 &11428400
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87700dfcf3ebaa459ea39c77a2a4509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11434784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87700dfcf3ebaa459ea39c77a2a4509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11437716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 175224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87700dfcf3ebaa459ea39c77a2a4509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11450296
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87700dfcf3ebaa459ea39c77a2a4509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11452708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -504,12 +568,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondsDuration: 8
+  secondsStartingOFfset: 0
   curveType: 1
   points:
-  - {fileID: 405966}
-  - {fileID: 499678}
-  - {fileID: 495050}
-  - {fileID: 490636}
+  - {fileID: 11437716}
+  - {fileID: 11428400}
+  - {fileID: 11484374}
+  - {fileID: 11402796}
   loopType: 1
 --- !u!114 &11479192
 MonoBehaviour:
@@ -524,7 +589,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trail: {fileID: 11452708}
   secondsIntoTraversal: 0
-  isActive: 1
+  points: []
+  secondsPerPoint: 0
+--- !u!114 &11480794
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87700dfcf3ebaa459ea39c77a2a4509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11482736
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87700dfcf3ebaa459ea39c77a2a4509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11484374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87700dfcf3ebaa459ea39c77a2a4509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11493838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87700dfcf3ebaa459ea39c77a2a4509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11498214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -549,13 +659,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondsDuration: 6
+  secondsStartingOFfset: 0
   curveType: 1
   points:
-  - {fileID: 403480}
-  - {fileID: 439572}
-  - {fileID: 429102}
-  - {fileID: 497970}
-  - {fileID: 440140}
+  - {fileID: 11434784}
+  - {fileID: 11482736}
+  - {fileID: 11450296}
+  - {fileID: 11493838}
+  - {fileID: 11480794}
   loopType: 1
 --- !u!136 &13624798
 CapsuleCollider:

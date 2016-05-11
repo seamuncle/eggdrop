@@ -11,20 +11,24 @@ public enum TrailCurveType
 /**
  * Data representation of a path to be followed
  */
+
 public class Trail : MonoBehaviour
 {
-	// Number of seconds a trail traversal should take
-	public float secondsDuration;
+    // Number of seconds a trail traversal should take
+    public float secondsDuration;
 
-	/**
+    // Number of seconds into the trail a new traversal should start at (more practical for looping)
+    public float secondsStartingOFfset;
+
+    /**
 	 * What type of curve is represented by the points
 	 */
-	public TrailCurveType curveType;
+    public TrailCurveType curveType;
 
 	/**
 	 * A linear representation of points along a trail with first being start and last being end
 	 */
-	public List<Transform> points;
+	public List<TrailPoint> points;
 
 	/**
 	 * Does path repeat?  A closed version of the path may be fundamentally different than an open one,
@@ -59,15 +63,16 @@ public class Trail : MonoBehaviour
 
 	}
 
-	// Editor Stuff
+    // Editor Stuff
 
-	void OnDrawGizmos ()
-	{
+    void OnDrawGizmos ()
+    {
 
-		// Draw the points
-		Color pointStartColor = new Color (1f, 0.25f, 0.25f);
+        // Draw the points
+        Color pointStartColor = new Color (1f, 0.25f, 0.25f);
 		Color pointFinishColor = new Color (0.25f, 0.25f, 1f);
 		new Color ();
+
 		for (int i = 0; i < points.Count; i++) {
 			float t = 1.0f * i / (points.Count - 1);
 			Gizmos.color = Color.Lerp (pointStartColor, pointFinishColor, t);
