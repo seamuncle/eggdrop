@@ -101,15 +101,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &181232
+--- !u!1 &165078
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 450530}
-  - 114: {fileID: 11487712}
+  - 4: {fileID: 460252}
+  - 114: {fileID: 11496294}
   m_Layer: 0
   m_Name: Point3
   m_TagString: Untagged
@@ -199,14 +199,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 489858}
   m_RootOrder: 3
---- !u!4 &450530
+--- !u!4 &460252
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181232}
+  m_GameObject: {fileID: 165078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.46, y: 0.51, z: 0}
+  m_LocalPosition: {x: 4.75, y: 0.7750001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 489858}
@@ -248,7 +248,7 @@ Transform:
   m_Children:
   - {fileID: 490870}
   - {fileID: 469902}
-  - {fileID: 450530}
+  - {fileID: 460252}
   - {fileID: 440056}
   - {fileID: 428780}
   m_Father: {fileID: 401620}
@@ -405,7 +405,7 @@ MonoBehaviour:
   points:
   - {fileID: 11472300}
   - {fileID: 11458396}
-  - {fileID: 11487712}
+  - {fileID: 11496294}
   - {fileID: 11442204}
   - {fileID: 11425248}
   loopType: 1
@@ -432,12 +432,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c87700dfcf3ebaa459ea39c77a2a4509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11487712
+--- !u!114 &11496294
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181232}
+  m_GameObject: {fileID: 165078}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c87700dfcf3ebaa459ea39c77a2a4509, type: 3}
