@@ -30,7 +30,7 @@ public class World : MonoBehaviour
         if (nextLevel == null)
         {
             // Apply Child prefab for simplicity
-            nextLevel = GetComponentInChildren<Level>();
+            nextLevel = GameObject.FindObjectOfType<Level>();
 
         }
         if (nextLevel == null)

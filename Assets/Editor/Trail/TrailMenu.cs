@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Unity;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 public class TrailMenu : EditorWindow
